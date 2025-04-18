@@ -1,4 +1,32 @@
---N, P, K nutrients for different states in India
---Sample data
-Andaman and Nicobar,L,VL,L,6.5
-Andhra Pradesh,H,VH,M,6.3
+ State,N,P,K,pH
+Andaman and Nicobar,VL,VL,L,6.5
+Andhra Pradesh,L,VH,M,6.3
+Arunachal Pradesh,H,M,M,6.7
+Assam,M,L,VL,4.6
+Bihar,VL,VH,H,2.3
+Goa,M,VL,M,0.3
+Gujarat,VL,VH,H,6.4
+Haryana,VL,M,H,8.0
+Himachal Pradesh,M,M,H,1.7
+Jammu and Kashmir,M,M,M,1.5
+Jharkhand,L,M,M,6.7
+Kerala,VL,VH,M,3.7
+Madhya Pradesh,VL,M,H,11.7
+Maharashtra,VL,M,H,0.5
+Manipur,VL,VH,L,2.1
+Meghalya,L,M,M,2.2
+Mizoram,M,M,M,2.0
+Nagaland,M,VL,H,1.6
+Odisha,VL,M,M,8.6
+Puduchery,VL,VL,M,6.4
+Punjab,M,M,H,8.1
+Rajasthan,VL,M,H,8.6
+Sikkim,M,M,M,0.6
+Tamil Nadu,L,VH,H,4.8
+Tripura,L,M,L,1.0
+Uttar Pradesh,VL,M,H,7.4
+Uttarkhand,L,M,M,3.4
+West Bengal,M,VH,M,4.7
+Chattisgarh,L,M,L,10.8
+Telanagana,L,VH,H,7.4
+Karnataka,L,VH,M,3.3

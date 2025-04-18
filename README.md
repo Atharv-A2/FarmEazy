@@ -1,15 +1,77 @@
-# Smart-agricultural-system
-Prototype for a real-time crop recommendation algorithm in Python using Machine Learning and Data Analytics.
-This work presents a system, in form of a website. The business logic in Python uses Machine Learning techniques in order to predict the most profitable crop in the forecasted weather and soil conditions at a specified location. The proposed system will integrate the data obtained from soil, crop repository, weather department and by applying machine learning algorithm: Multiple Linear Regression, a prediction of most suitable crops according to current environmental conditions is made. This provides a farmer with variety of options of crops that can be cultivated.
+# FarmEazy
 
-The business logic can be located in /code/mlr_algo.py directory.
-The server is programmed using node.js. To execute the project you just need to run the node.js- 'server.js' script and navigate to the displayed ip address on the prompt to access the system.
+The **FarmEazy** is a web-based and Android-compatible application designed to assist farmers in predicting the most suitable crops for cultivation based on current weather and soil conditions. By leveraging **Node.js** for both the front end and backend, and **Python (scikit-learn)** for machine learning processing, the system integrates data from multiple sources to provide accurate crop predictions.
 
-Python package Stack: scikit-learn, pandas.
-Web development technologies: HTML, CSS, JavaScript.
-All the necessary datasets are included in the repository itself.
+## Features
 
-Project Walkthrough: https://www.youtube.com/watch?v=7zR-3olbr9E&t=186s
+- **Crop Prediction**: Uses **Multiple Linear Regression (MLR)** to predict the most producible crops based on environmental conditions.
+- **Data Integration**: Combines data from official datasets, weather departments, and soil repositories.
+- **User-Friendly Interface**: Accessible via a web interface and Android application.
+- **Dynamic Routing**: Serves HTML, CSS, JavaScript, and image files dynamically using Node.js.
+- **Machine Learning Backend**: Processes data using Python's scikit-learn library for prediction analysis.
 
-Contributors,
-Omkar Buchade, Nilesh Mehta, Shubham Ghodekar.
+## Project Flow
+
+1. The user accesses the website at `http://localhost:8900`.
+2. They manually select their location to feed into the regression model.
+3. The system processes the input, and the user waits for a short time.
+4. The application displays the crops that can be planted now, along with their corresponding images.
+
+## Project Structure
+
+Smart-agricultural-system/
+├── code/
+│ ├── mlr_algo.py # Python script for crop prediction using MLR
+│ ├── test.py # Python script for testing
+│ ├── metacrops.csv # Dataset for crop analysis
+│ └── code/ # Additional datasets
+├── public/
+│ ├── index.html # Home page
+│ ├── company.html # About the system
+│ ├── contact.html # Contact page
+│ ├── css/ # Stylesheets
+│ ├── js/ # JavaScript files
+│ ├── crops/ # Crop images
+│ └── images/ # Other images
+├── server.js # Node.js server
+├── package.json # Node.js dependencies
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+└── .vscode/ # VS Code settings
+
+## Prerequisites
+
+1. **Node.js**: Install Node.js from [Node.js Official Website](https://nodejs.org/).
+2. **Python**: Install Python (3.x) from [Python Official Website](https://www.python.org/).
+3. **Virtual Environment**: Set up a Python virtual environment.
+4. **Dependencies**:
+   - Install Node.js dependencies using `npm install`.
+   - Install Python dependencies using `pip install -r requirements.txt`.
+
+## Getting Started
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone <repository-url>
+   cd Smart-agricultural-system
+   ```
+
+2. **Activate Virtual Environment**:
+
+   ```bash
+   # On Windows
+   venv\Scripts\activate
+
+   # On macOS/Linux
+   source venv/bin/activate
+   ```
+
+3. **Start the Project**:
+
+   ```bash
+   node server.js
+   ```
+
+4. **Access the Application**:
+   Open your browser and navigate to `http://localhost:8900` to access the web interface.

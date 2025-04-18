@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Author: Omkar
-"""
-
-# -*- coding: utf-8 -*-
 
 #-----------------------------imports-----------------------------------------#
 import csv
@@ -57,7 +52,7 @@ def conv(nutrient):
 
 
 #----------------------------areas temp and rain -----------------------------#
-with open('code/temprainfall.csv') as csvfile:
+with open('code/code/temprainfall.csv') as csvfile:
     #print('this is area:'+area)
     reader = csv.reader(csvfile)
     flag=0
@@ -109,7 +104,7 @@ def rainfall(temp_final,rainfall_final,temp,rain_fall):
 def nutrients(state,rainfall_final,temp_final):
     try:
         #print('this is state:'+state)
-        with open('code/nutrientsarea.csv', 'r') as csvfile:
+        with open('code/code/nutrientsarea.csv', 'r') as csvfile:
             reader = csv.reader(csvfile)
             for row in reader:
                if row[0] == state:
@@ -118,17 +113,17 @@ def nutrients(state,rainfall_final,temp_final):
                    karea=conv(row[3])
                    ph=row[4]
     except IOError:
-       print "No file exists named nutrientsarea.csv"
+       print ("No file exists named nutrientsarea.csv")
        sys.exit("The required file does not exist!!!")               
     csvfile.close
 
     #nutrient based filter of crops
     try:
         
-        with open('code/cropDB.csv', 'r') as csvfile, open('code/metacrops.csv', 'w') as metacrops:
+        with open('code/code/cropDB.csv', 'r') as csvfile, open('code/metacrops.csv', 'w') as metacrops:
             reader = csv.reader(csvfile)
             #writer=csv.writer(metacrops)
-            metacrops.writelines("Crop, Rainfall, Temperature, pH \n")
+            metacrops.writelines("Crop,Rainfall,Temperature,pH \n")
             for row in reader:
                ncrop=conv(row[8])
                pcrop=conv(row[9])
@@ -141,7 +136,7 @@ def nutrients(state,rainfall_final,temp_final):
                    metacrops.writelines(total)
                    #print total
     except IOError:
-       print "No file exists named cropDB.csv",
+       print ("No file exists named cropDB.csv")
        sys.exit("The required file does not exist!!!")     
     csvfile.close
     metacrops.close 
@@ -155,14 +150,14 @@ def filewrite():
     n=1
     try:
         with open("code/metacrops.csv",'r') as f:
-            with open("code/metacrops11.csv", "w") as f1:
+            with open("code/code/metacrops11.csv", "w") as f1:
                 for line in f:
                     if n==1:
                         n=n+1
                         continue
                     f1.write(line)
     except IOError as e:
-            print "I/O error({0}): {1}".format(e.errno, e.strerror)
+            print ("I/O error({0}): {1}".format(e.errno, e.strerror))
             sys.exit("No such file exists")
     f.close
     f1.close  
@@ -178,11 +173,11 @@ def regression():
     n=0
     crop_Y_pred=[]
     crop_name=[]
-    dataset=pd.read_csv('code/regressiondb.csv')
+    dataset=pd.read_csv('code/code/regressiondb.csv')
     locbased=pd.read_csv('code/metacrops.csv')
     
     try:
-       with open('code/metacrops11.csv', 'r') as csvfile:
+       with open('code/code/metacrops11.csv', 'r') as csvfile:
             reader = csv.reader(csvfile)
             #metacrops.writelines("Crop,Production\n")
             #os.remove('final.txt')
@@ -190,6 +185,7 @@ def regression():
                crop=row[0]
         # Importing the dataset
                metadata=dataset.loc[dataset['Crop'] == crop]
+            #    print(metadata)
                X = metadata.iloc[:, :-2].values
                Y = metadata.iloc[:, 4].values
                
@@ -198,6 +194,7 @@ def regression():
                ##regressor.fit(X, Y)
               
                X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.1, random_state = 0)
+
                regressor = LinearRegression()
                regressor.fit(X_train, Y_train)  
                
@@ -223,7 +220,7 @@ def regression():
        return sorted_crops
    
     except IOError:
-        print "No file exists named metacrops11.csv"
+        print ("No file exists named metacrops11.csv")
         sys.exit("No such file exists")
     os.remove('code/metacrops.csv')       
     os.remove('code/metacrops11.csv')

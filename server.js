@@ -9,7 +9,6 @@ var PythonShell = require('python-shell');
 var jsonfile = require('jsonfile')
 
 
-
 var urlencoded = bodyParser.urlencoded({ extended: false });
 
 
@@ -36,8 +35,9 @@ var options = {
  PythonShell.run('code/mlr_algo.py',options, function (err, results) {
    if (err) throw err;
     // results is an array consisting of messages collected during execution
-    console.log('results', results[0]);
-    res.send( results[0]);
+    console.log('relts -', results[0]);
+    // console.log('req - ',req.html);
+    res.send(results[0]);
 
 
      
