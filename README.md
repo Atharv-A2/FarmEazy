@@ -75,3 +75,10 @@ FarmEazy/
 
 4. **Access the Application**:
    Open your browser and navigate to `http://localhost:8900` to access the web interface.
+
+
+## Images and SS
+![Screenshot (403)](https://github.com/user-attachments/assets/34100466-ae44-4739-b864-677a95a7286c)
+![Screenshot (405)](https://github.com/user-attachments/assets/7c22397a-9dea-40fb-b409-d80ece884963)
+
+
