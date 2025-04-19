@@ -19,7 +19,7 @@ The **FarmEazy** is a web-based and Android-compatible application designed to a
 
 ## Project Structure
 ```bash
-Smart-agricultural-system/
+FarmEazy/
 ├── code/
 │ ├── mlr_algo.py # Python script for crop prediction using MLR
 │ ├── test.py # Python script for testing
@@ -54,7 +54,7 @@ Smart-agricultural-system/
 
    ```bash
    git clone https://github.com/Atharv-A2/FarmEazy.git
-   cd Smart-agricultural-system
+   cd FarmEazy
    ```
 
 2. **Activate Virtual Environment**:
