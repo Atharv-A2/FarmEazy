@@ -18,7 +18,7 @@ The **FarmEazy** is a web-based and Android-compatible application designed to a
 4. The application displays the crops that can be planted now, along with their corresponding images.
 
 ## Project Structure
-
+```bash
 Smart-agricultural-system/
 ├── code/
 │ ├── mlr_algo.py # Python script for crop prediction using MLR
@@ -38,7 +38,7 @@ Smart-agricultural-system/
 ├── requirements.txt # Python dependencies
 ├── README.md # Project documentation
 └── .vscode/ # VS Code settings
-
+```
 ## Prerequisites
 
 1. **Node.js**: Install Node.js from [Node.js Official Website](https://nodejs.org/).
@@ -53,7 +53,7 @@ Smart-agricultural-system/
 1. **Clone the Repository**:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Atharv-A2/FarmEazy.git
    cd Smart-agricultural-system
    ```
 
